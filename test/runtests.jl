@@ -1,4 +1,5 @@
 using Kafka
+import Kafka: writeobj, readobj
 using Base.Test
 
 io = IOBuffer()
@@ -10,9 +11,9 @@ Kafka.writeobj(io, ["hello", "world"])
 
 seek(io, 0)
 
-@test Kafka.readobj(io, String) == "test"
-@test Kafka.readobj(io, Int64) == 42
-@test Kafka.readobj(io, Vector{UInt8}) == UInt8[1, 2, 3]
-@test Kafka.readobj(io, Vector{String}) == ["hello", "world"]
+@test readobj(io, String) == "test"
+@test readobj(io, Int64) == 42
+@test readobj(io, Vector{UInt8}) == UInt8[1, 2, 3]
+@test readobj(io, Vector{String}) == ["hello", "world"]
 
 println("Ok.")
