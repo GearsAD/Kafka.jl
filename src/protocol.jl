@@ -205,8 +205,6 @@ end
 immutable OffsetResponse
     topic_data::Vector{OffsetResponseTopicData}
 end
-<<<<<<< HEAD
-=======
 
 # API versions
 
@@ -222,4 +220,3 @@ immutable ApiVersionsResponse
     api_versions::Vector{ApiVersion}
     throttle_time_ms::Int32
 end
->>>>>>> de69451283783ab53032c67a50ec8c691c4481fa
